@@ -1,38 +1,41 @@
-# Agam VS Code Extension
+# 💻 Agam Visual Studio Code Extension
 
-> Part of the [agam-lang](https://github.com/agam-lang) organization.
+> Part of the [agam-lang](https://github.com/agam-lang) organization.  
+> Official rich language tooling extension for **Agam** in Visual Studio Code and Cursor, providing syntax highlighting, intelligent autocompletion, real-time diagnostics, and Language Server Protocol (LSP) integration.
 
-## Mission
+---
 
-Provide first-class VS Code support for Agam development including syntax highlighting, LSP integration, snippets, debugging, and code actions.
+## ✨ Features
 
-## Key Areas
+- 🎨 **Dual-Profile Syntax Highlighting**: Seamless TextMate tokenization for both `@lang.base` (Pythonic indentation) and `@lang.advance` (systems/braced syntax) across `.agam` and `.agm` files.
+- ⚡ **Language Server Protocol (`agam_lsp`)**:
+  - Live compiler diagnostics and error squiggles with span tracking.
+  - Go to Definition, Find References, and Document Symbols.
+  - Hover documentation with inferred type signatures.
+  - Inlay hints for tensor shapes and type annotations.
+- 🪄 **Auto-Formatting (`agam_fmt`)**: Code formatting on save with configurable indentation and style guides.
+- 🚀 **Build & Run Integration**: Direct command palette triggers for `Agam: Run File (JIT)`, `Agam: Benchmark`, and `Agam: Build Native (AOT)`.
+- 🧩 **Productivity Snippets**: Instant boilerplates for tensors, `@gpu` kernels, algebraic effects, and test suites.
 
-- Syntax Highlighting
-- LSP Client
-- Snippets
-- Debugging
-- Code Actions
-- Themes
+---
 
-## Status
+## 🛠️ Development & Building
 
-This repository is under active development as part of the Agam ecosystem.
+```bash
+# 1. Install extension dependencies
+npm install
 
-## Related Repositories
+# 2. Compile TypeScript extension source
+npm run compile
 
-| Repository | Description |
-|------------|-------------|
-| [`agam`](https://github.com/agam-lang/agam) | Core compiler & toolchain |
-| [`std`](https://github.com/agam-lang/std) | Standard library |
-| [`agamlab`](https://github.com/agam-lang/agamlab) | Scientific computing platform |
-| [`agam-vscode`](https://github.com/agam-lang/agam-vscode) | VS Code extension |
-| [`rfcs`](https://github.com/agam-lang/rfcs) | Language design proposals |
+# 3. Package extension into .vsix bundle
+npx vsce package
+```
 
-## Contributing
+Press `F5` inside VS Code to launch the **Extension Development Host** with the live Agam extension loaded.
 
-Please see the organization-wide [Contributing Guide](https://github.com/agam-lang/.github/blob/main/CONTRIBUTING.md) and [Code of Conduct](https://github.com/agam-lang/.github/blob/main/CODE_OF_CONDUCT.md).
+---
 
-## License
+## 📜 License
 
 Dual-licensed under [MIT](LICENSE-MIT) and [Apache 2.0](LICENSE-APACHE).
