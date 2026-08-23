@@ -1,7 +1,38 @@
 {
   "name": "agam",
-  "displayName": "Agam",
-  "description": "Agam language support",
+  "displayName": "Agam Language",
+  "description": "Rich language support for Agam — Hardware-Accelerated Systems & AI Language",
   "version": "0.1.0",
-  "engines": { "vscode": "^1.74.0" }
+  "publisher": "agam-lang",
+  "icon": "logo.svg",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "agam",
+        "aliases": ["Agam", "agam"],
+        "extensions": [".agm", ".agam"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "agam",
+        "scopeName": "source.agam",
+        "path": "./syntaxes/agam.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "agam",
+        "path": "./snippets/agam.json"
+      }
+    ]
+  }
 }

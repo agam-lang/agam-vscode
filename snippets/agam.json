@@ -1,0 +1,60 @@
+{
+  "Function Definition": {
+    "prefix": "fn",
+    "body": [
+      "fn ${1:name}(${2:params}) -> ${3:i32} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Define a function in Agam"
+  },
+  "Main Function": {
+    "prefix": "main",
+    "body": [
+      "fn main() {",
+      "\t${1:println(\"Hello, World!\");}",
+      "}"
+    ],
+    "description": "Standard main entry point"
+  },
+  "GPU Kernel": {
+    "prefix": "gpu_kernel",
+    "body": [
+      "@gpu",
+      "fn ${1:kernel_name}(data: &mut [f32], length: usize) {",
+      "\tlet tid = @gpu.thread_id_x();",
+      "\tif tid < length {",
+      "\t\tdata[tid] = data[tid] * 2.0;",
+      "\t}",
+      "}"
+    ],
+    "description": "Hardware-accelerated GPU kernel"
+  },
+  "Struct Definition": {
+    "prefix": "struct",
+    "body": [
+      "struct ${1:Name} {",
+      "\t${2:field}: ${3:i32},",
+      "}"
+    ],
+    "description": "Define a struct in Agam"
+  },
+  "Trait Definition": {
+    "prefix": "trait",
+    "body": [
+      "trait ${1:Name} {",
+      "\tfn ${2:method}(&self) -> ${3:i32};",
+      "}"
+    ],
+    "description": "Define a trait"
+  },
+  "Effect Definition": {
+    "prefix": "effect",
+    "body": [
+      "effect ${1:Console} {",
+      "\tfn ${2:log}(msg: String) -> void;",
+      "}"
+    ],
+    "description": "Define an algebraic effect"
+  }
+}
